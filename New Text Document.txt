@@ -1,3 +1,4 @@
+		STA Lib
 - tạo file lib.c và lib.h trong thư mục A
 	compi lib.c tạo file object
 	+gcc -c lib.c -o lib.o
@@ -11,3 +12,23 @@
 	đứng ở thư mục B
 	+gcc -o main main.o C:\Users\ad\Desktop\A\lib.a
 là xxong
+
+
+
+			DYN Lib
+- tạo file lib.c và lib.h trong thư mục C
+	vao bash trong cywin
+	+gcc -g -fPIC lib.c -shared -o lib.dll
+- tạo file main.c trong thu muc D
+	vao bash trong cywin
+	+gcc -I C:/Users/ad/Desktop/stacticlib/C -c main.c -o main.o
+	+gcc -o main.exe main.o -LC:/Users/ad/Desktop/stacticlib/C -llib
+	vậy là ok tiếp theo thì phải export path
+- vào thư mục C bằng bash
+	+export PATH=/cygdrive/c/Users/ad/Desktop/stacticlib/C:$PATH
+xong
+
+static lib :thì nôm na giống như tạo hàm riêng ra khỏi hàm main
+dyn lib: thì giống như đưa đường dẫn tới hàm cần sử dụng
+khi chương trình chạy thì mới theo địa chỉ gọi hàm, có thể sữa file dll
+mà không cần phải compl lại chương trình main.c
