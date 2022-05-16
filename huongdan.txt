@@ -14,8 +14,8 @@
 là xxong
 
 
-
-			DYN Lib
+	share object
+			DYN Lib ?
 - tạo file lib.c và lib.h trong thư mục C
 	vao bash trong cywin
 	+gcc -g -fPIC lib.c -shared -o lib.dll
