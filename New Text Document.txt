@@ -1,0 +1,13 @@
+- tạo file lib.c và lib.h trong thư mục A
+	compi lib.c tạo file object
+	+gcc -c lib.c -o lib.o
+	tiếp lệnh này
+	+ar rcs lib.a lib.o
+-tạo file sử sụng thư viện main.c trng thư mục B
+	+trong file c include header lib.h
+	compile (do ở khác thư mục nên có -I)
+	+gcc -I C:\Users\ad\Desktop\A -c main.c -o main.o
+-ghép link thư viện lại
+	đứng ở thư mục B
+	+gcc -o main main.o C:\Users\ad\Desktop\A\lib.a
+là xxong
